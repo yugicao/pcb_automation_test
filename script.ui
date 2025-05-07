@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1003</width>
+    <height>635</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PCB automation test</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="video_label">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>40</y>
+      <width>391</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="capture_button">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>100</y>
+      <width>121</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #00A8E8;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #0077B6;
+}
+
+QPushButton:pressed {
+    background-color: #005F87;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Scan</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>ui_graphics/scan.png</normaloff>
+      <activeon>ui_graphics/scan_hold.png</activeon>ui_graphics/scan.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>45</width>
+      <height>45</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="result_label">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>320</y>
+      <width>391</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-10</y>
+      <width>1001</width>
+      <height>621</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+    background-color: #0A192F; /* Xanh đậm */
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QTreeWidget" name="result_tree">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>200</y>
+      <width>351</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Header (Tiêu đề cột) */
+QHeaderView::section {
+    background-color: #1B263B;
+    color: white;
+    padding: 6px;
+    border: none;
+    font-weight: bold;
+    text-align: center; /* Căn giữa tiêu đề */
+    border-radius: 6px;
+
+}
+/*
+QHeaderView::section {
+    background-color: #1B263B;
+    color: white;
+    padding: 6px;
+    border: 1px solid #415A77;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+}
+*/
+/* Tree Widget */
+QTreeWidget {
+    background-color: #E0E1DD;
+    color: #0D1B2A;
+    border: 2px solid #1B263B;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+/* Hàng trong Tree */
+QTreeWidget::item {
+    background-color: #E0E1DD;
+    border-radius: 4px;
+    padding: 4px;
+    border-bottom: 1px solid #D0D0D0;
+
+}
+
+
+/* Hàng được chọn */
+
+QTreeWidget::item:selected {
+    background-color: #E0E1DD;
+    border-radius: 4px;
+    padding: 4px;
+    border-bottom: 1px solid #D0D0D0;
+}</string>
+    </property>
+    <column>
+     <property name="text">
+      <string>   Components</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>   Requirement</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>             Result</string>
+     </property>
+    </column>
+    <item>
+     <property name="text">
+      <string>MCU</string>
+     </property>
+     <property name="text">
+      <string>          1</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Res</string>
+     </property>
+     <property name="text">
+      <string>          9</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Cap</string>
+     </property>
+     <property name="text">
+      <string>          5</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Button</string>
+     </property>
+     <property name="text">
+      <string>          1</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Header-dip</string>
+     </property>
+     <property name="text">
+      <string>          2</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Mosfet</string>
+     </property>
+     <property name="text">
+      <string>          2</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>HT7333</string>
+     </property>
+     <property name="text">
+      <string>          1</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Diode</string>
+     </property>
+     <property name="text">
+      <string>          1</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Sensor</string>
+     </property>
+     <property name="text">
+      <string>          1</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Header-smd</string>
+     </property>
+     <property name="text">
+      <string>          1</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="result_icon_label">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>300</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>10</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QLabel {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+
+QTableWidget {
+    background-color: #d3d3d3;
+    border-radius: 5px;
+    gridline-color: black;
+}
+
+QPushButton {
+    background-color: #007acc;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+QPushButton:hover {
+    background-color: #005f99;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Camera Stream</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>290</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+QTableWidget {
+    background-color: #d3d3d3;
+    border-radius: 5px;
+    gridline-color: black;
+}
+
+QPushButton {
+    background-color: #007acc;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+QPushButton:hover {
+    background-color: #005f99;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Detection Results</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>20</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>ui_graphics/Logo-GTVT.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="tuning_button">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>100</y>
+      <width>121</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #00A8E8;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #0077B6;
+}
+
+QPushButton:pressed {
+    background-color: #005F87;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Tuning</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>ui_graphics/tuning.png</normaloff>ui_graphics/tuning.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>45</width>
+      <height>45</height>
+     </size>
+    </property>
+   </widget>
+   <zorder>label</zorder>
+   <zorder>video_label</zorder>
+   <zorder>capture_button</zorder>
+   <zorder>result_label</zorder>
+   <zorder>result_tree</zorder>
+   <zorder>result_icon_label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_4</zorder>
+   <zorder>tuning_button</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1003</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

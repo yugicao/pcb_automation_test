@@ -1,0 +1,11 @@
+MCU
+res
+cap
+button
+header-dip
+mosfet
+ht7333
+diode
+sensor
+header-smd
+miss
