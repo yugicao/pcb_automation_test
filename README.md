@@ -1,5 +1,5 @@
-## Kết quả chạy chương trình
+## Program Output
 
-Dưới đây là kết quả thu được:
+Below is the result obtained:
 
-![Kết quả](result/result.png)
+![Result](result/result.png)
